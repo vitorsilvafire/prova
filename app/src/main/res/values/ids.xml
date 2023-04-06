@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="imgSigno" type="id" />
+    <item name="txtSigno" type="id" />
+    <item name="btnCalcular" type="id" />
+</resources>
