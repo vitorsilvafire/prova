@@ -32,24 +32,24 @@
 
     <TextView
 
-        android:id="@+id/txtSigno"
+        android:id="@+id/txtDia"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Dia"
         app:layout_constraintEnd_toStartOf="@+id/plain_text_input2"
-        app:layout_constraintHorizontal_bias="0.41"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="242dp" />
+        app:layout_constraintBaseline_toBaselineOf="@+id/plain_text_input2"
+        tools:layout_editor_absoluteY="239dp" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/txtMes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Mês"
         app:layout_constraintEnd_toStartOf="@+id/plain_text_input"
-        app:layout_constraintHorizontal_bias="0.352"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="188dp" />
+        app:layout_constraintBaseline_toBaselineOf="@+id/plain_text_input"
+        tools:ignore="MissingConstraints" />
 
     <ImageView
         android:id="@+id/imgSigno"

@@ -3,38 +3,25 @@ package com.example.prova
 import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
-import android.widget.EditText
-import android.widget.ImageView
-import android.widget.TextView
+import android.widget.*
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var txtMes: EditText
-    private lateinit var txtDia: EditText
 
 
-    private lateinit var imgSigno: ImageView
-    private lateinit var txtSigno: TextView
 
-    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        val txtMes: EditText = findViewById<EditText?>(R.id.plain_text_input)
+        val txtDia: EditText = findViewById<EditText>(R.id.plain_text_input2)
 
-        imgSigno = findViewById(R.id.imgSigno)
-        txtSigno = findViewById(R.id.txtSigno)
-
-        val signo = calcularSigno("10/02/1990")
         findViewById<Button>(R.id.btnCalcular).setOnClickListener {
-            val signo = calcularSigno("${txtDia.text}/${txtMes.text}")
+            val signo = calcularSigno(txtDia.text.toString().toInt(), txtMes.text.toString().toInt())
             exibirSigno(signo)
         }
 
     }
-    private fun calcularSigno(DiadoAniversario: String) {
-        val dia = DiadoAniversario.substring(0, 2).toInt()
-        val mes = DiadoAniversario.substring(3, 5).toInt()
-
+    private fun calcularSigno(dia: Int, mes: Int)  : Int {
         val imageView = when {
             (dia >= 21 && mes == 3) || (dia <= 20 && mes == 4) -> R.drawable.aries
             (dia >= 21 && mes == 4) || (dia <= 20 && mes == 5) -> R.drawable.touro
@@ -49,13 +36,12 @@ class MainActivity : AppCompatActivity() {
             (dia >= 21 && mes == 1) || (dia <= 19 && mes == 2) -> R.drawable.aquario
             else -> R.drawable.peixes
         }
-
+        return (imageView)
     }
 
-    private fun exibirSigno(signo: Unit) {
-        val idImagem = resources.getIdentifier(signo.toString(), "drawable", packageName)
-        imgSigno.setImageResource(idImagem)
-        txtSigno.text = "Seu signo é $signo"
+    private fun exibirSigno(signo: Int) {
+        var imgSigno: ImageView = findViewById(R.id.imgSigno)
+        imgSigno.setImageResource(signo)
     }
 
 }
