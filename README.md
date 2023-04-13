@@ -11,7 +11,7 @@
  Kotlin;  <img src="https://user-images.githubusercontent.com/124945915/228702325-66f1cdd2-27ab-48b0-9cce-57c5720560ef.png" width="90" height="90" >
 
  <h3>Descrição:</h3>
- O aplicativo tem uma interface simples, onde você insere o dia e o mês do seu aniversario e clica no botão calcular.
+ O aplicativo tem uma interface simples, onde você insere o dia e o mês do seu aniversario e clica no botão calcular, ele exibirá uma imagem de acordo com seu signo.
  <h3>Autor:</h3>
   Vitor Silva;
 </p>
